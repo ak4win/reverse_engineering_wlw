@@ -29,7 +29,7 @@ def extraction(url):
     return data
 
 
-extracted = extraction(
-    "/Users/alexanderkubel/Coding/Python/reverse_engineering/WerLiefertWas/data.json"
-)
-print(extracted)
+# extracted = extraction(
+#     "/Users/alexanderkubel/Coding/Python/reverse_engineering/WerLiefertWas/data_it-security.json"
+# )
+# print(extracted)
