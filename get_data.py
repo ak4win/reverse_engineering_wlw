@@ -73,12 +73,10 @@ def get_data_from_seachterms():
             if page > total_pages:
                 break
 
-        with open(f"data_{searchterm}.json", "w") as jsonFile:
+        with open(f"companies/data_{searchterm}.json", "w") as jsonFile:
             jsonString = json.dumps(all_compaines)
             jsonFile.write(jsonString)
 
-        extracted = extraction(
-            f"/Users/alexanderkubel/Coding/Python/reverse_engineering/WerLiefertWas/data_{searchterm}.json"
-        )
+        extracted = extraction(searchterm)
 
         print(extracted)

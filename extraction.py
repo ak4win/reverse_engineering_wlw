@@ -1,8 +1,10 @@
 import pandas as pd
 
 
-def extraction(url):
-    data = pd.read_json(f"{url}")
+def extraction(searchterm):
+    data = pd.read_json(
+        f"/Users/alexanderkubel/Coding/Python/reverse_engineering/WerLiefertWas/companies/data_{searchterm}.json"
+    )
 
     data = data[
         [
@@ -26,10 +28,9 @@ def extraction(url):
     # data["keyword"] = data["description"].str.find("web", 3)
     # data = data.sort_values(by=["keyword"], ascending=False)
 
+    # export the cleaned data
+    data.to_json(
+        f"/Users/alexanderkubel/Coding/Python/reverse_engineering/WerLiefertWas/companies/data_{searchterm}.json"
+    )
+
     return data
-
-
-# extracted = extraction(
-#     "/Users/alexanderkubel/Coding/Python/reverse_engineering/WerLiefertWas/data_it-security.json"
-# )
-# print(extracted)
